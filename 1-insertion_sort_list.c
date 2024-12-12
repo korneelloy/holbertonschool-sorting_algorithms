@@ -38,7 +38,6 @@ void insertion_sort_list(listint_t **list)
 			printf("current next si plus petit %d\n", current->next->n);
 			temp = current;
 			switching(temp, current->prev);
-			
 		}
 		current = current->next;
 	}
