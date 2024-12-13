@@ -1,11 +1,5 @@
 #include "sort.h"
 
-
-void push_on_stack(int temp)
-{
-	printf("%d ,", temp);
-}
-
 /**
  * swap - swap 2 elements of a list
  * @array: pointer to the array
@@ -33,9 +27,7 @@ void swap(int *array, int index1, int index2)
 
 void quick_sort(int *array, size_t size)
 {
-	int pivot = size - 1, j = 0, i = 0, k, n_one, n_two;
-	int *array_one, *array_two;
-	int temp;
+	int pivot = size - 1, j = 0, i = 0;
 
 	if (size == 0)
 	{
@@ -53,25 +45,7 @@ void quick_sort(int *array, size_t size)
 			i++;
 		}
 	}
-	
-	temp = array[pivot];
-
 	swap(array, pivot, i);
-	 
-	n_one = i;
-	n_two = pivot - i;
-/** 
-	array_one = malloc(sizeof(int)* n_one);
-	array_two = malloc(sizeof(int)* n_two);
-
-	for (k = 0; k < n_one; k++)
-		array_one[k] = array[k];
-	for (k = i+1; k <= pivot; k++)
-		array_two[k - i - 1] = array[k];
-*/	
-
 	quick_sort(&array[0], i);
-
 	quick_sort(&array[i + 1], pivot - i);
-
 }
